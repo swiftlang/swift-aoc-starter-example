@@ -2,7 +2,7 @@
 @_exported import Collections
 import Foundation
 
-protocol AdventDay {
+protocol AdventDay: Sendable {
   associatedtype Answer = Int
 
   /// The day of the Advent of Code challenge.
