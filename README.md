@@ -45,7 +45,7 @@ let allChallenges: [any AdventDay] = [
 ]
 ```
 
-Then implement part 1 and 2. The `AdventOfCode.swift` file controls which challenge
+Then implement part 1 and 2. The `AdventOfCode.swift` file controls which day's challenge
 is run with `swift run`. Add your new type to its `allChallenges` array. By default 
 it runs the most recent challenge.
 
