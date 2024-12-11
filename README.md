@@ -49,9 +49,6 @@ Then implement part 1 and 2. The `AdventOfCode.swift` file controls which challe
 is run with `swift run`. Add your new type to its `allChallenges` array. By default 
 it runs the most recent challenge.
 
-The `AdventOfCode.swift` file controls which day's challenge is run
-with `swift run`. By default that runs the most recent challenge in the package.
-
 To supply command line arguments use `swift run AdventOfCode`. For example,
 `swift run -c release AdventOfCode --benchmark 3` builds the binary with full
 optimizations, and benchmarks the challenge for day 3.
