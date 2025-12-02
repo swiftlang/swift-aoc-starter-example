@@ -34,6 +34,5 @@ let package = Package(
       name: "AdventOfCodeTests",
       dependencies: ["AdventOfCode"] + dependencies
     )
-  ],
-  swiftLanguageModes: [.v6]
+  ]
 )
