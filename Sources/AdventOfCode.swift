@@ -1,8 +1,8 @@
 import ArgumentParser
 
 // Add each new day implementation to this array:
-let allChallenges: [any AdventDay] = [
-  Day00()
+let allChallenges: [any AdventDay.Type] = [
+  Day00.self
 ]
 
 @main
@@ -17,7 +17,7 @@ struct AdventOfCode: AsyncParsableCommand {
   var all: Bool = false
 
   /// The selected day, or the latest day if no selection is provided.
-  var selectedChallenge: any AdventDay {
+  private var selectedChallenge: any AdventDay.Type {
     get throws {
       if let day {
         if let challenge = allChallenges.first(where: { $0.day == day }) {
@@ -32,7 +32,7 @@ struct AdventOfCode: AsyncParsableCommand {
   }
 
   /// The latest challenge in `allChallenges`.
-  var latestChallenge: any AdventDay {
+  private var latestChallenge: any AdventDay.Type {
     allChallenges.max(by: { $0.day < $1.day })!
   }
 
@@ -64,9 +64,10 @@ struct AdventOfCode: AsyncParsableCommand {
         try [selectedChallenge]
       }
 
-    for challenge in challenges {
-      print("Executing Advent of Code challenge \(challenge.day)...")
+    for challengeType in challenges {
+      print("Executing Advent of Code challenge \(challengeType.day)...")
 
+      let challenge = challengeType.init()
       let timing1 = await run(part: challenge.part1, named: "Part 1")
       let timing2 = await run(part: challenge.part2, named: "Part 2")
 
